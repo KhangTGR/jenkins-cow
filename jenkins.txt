@@ -1,0 +1,6 @@
+cd ./code
+docker rm -f cowsay-container
+docker build -t cowsay .
+docker run -d --rm -p 8080:8080 --name cowsay-container cowsay
+sleep 10
+curl docker:8080
